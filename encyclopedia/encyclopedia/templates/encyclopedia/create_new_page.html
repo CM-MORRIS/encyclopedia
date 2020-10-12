@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create new page
+{% endblock %}
+
+{% block body %}
+
+<!--add 2 input spaces for title and markdown entry with submit
+submits a post request to create_new_page  -->
+
+<div class="flex-form">
+  <form method="POST" action="{% url 'create_new_page' %}" id="create_new_page_form" class="form-inline">
+    {% csrf_token %}
+      <input id="new_page_title" class="new_page" type="text" name="new_page_title" placeholder="Enter page title">
+      <input id="new_page_info" class="new_page" type="text" name="new_page_info" placeholder="Add page info">
+      <button id="create_page_submit" class="btn btn-danger" type="submit">Create</button>
+  </form>
+</div>
+
+
+
+{% endblock %}
